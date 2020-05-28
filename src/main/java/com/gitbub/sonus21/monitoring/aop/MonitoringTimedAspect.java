@@ -1,5 +1,5 @@
 /*
- * Copyright (c)  Sonu Kumar
+ * Copyright (c) Sonu Kumar
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -34,8 +34,12 @@ import org.aspectj.lang.reflect.MethodSignature;
 
 @Aspect
 @Slf4j
+@SuppressWarnings("WeakerAccess")
 public class MonitoringTimedAspect {
-  /** Taken from {@link io.micrometer.core.aop.TimedAspect} */
+
+  /**
+   * Taken from {@link io.micrometer.core.aop.TimedAspect}
+   */
   public static final String DEFAULT_METRIC_NAME = "method.timed";
 
   public static final String EXCEPTION_TAG = "exception";

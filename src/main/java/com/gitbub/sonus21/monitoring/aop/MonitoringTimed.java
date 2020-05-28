@@ -1,5 +1,5 @@
 /*
- * Copyright (c)  Sonu Kumar
+ * Copyright (c) Sonu Kumar
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -24,7 +24,10 @@ import java.lang.annotation.Target;
 @Target({ElementType.ANNOTATION_TYPE, ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MonitoringTimed {
-  /** All fields are same as in {@link io.micrometer.core.annotation.Timed} */
+
+  /**
+   * All fields are same as in {@link io.micrometer.core.annotation.Timed}
+   */
   String value() default "";
 
   String[] extraTags() default {};

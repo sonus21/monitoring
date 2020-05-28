@@ -29,7 +29,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StockManager {
-  @Autowired private MeterRegistry meterRegistry;
+
+  @Autowired
+  private MeterRegistry meterRegistry;
   private List<String> orders = new Vector<>();
   private Counter counter;
   private Gauge gauge;

@@ -33,6 +33,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class ControllerProfiler {
+
   private static Map<String, Object> timedAnnotationData = new HashMap<>();
 
   static {
@@ -44,7 +45,8 @@ public class ControllerProfiler {
     timedAnnotationData.put("percentiles", percentiles);
   }
 
-  @Autowired private MonitoringTimedAspect timedAspect;
+  @Autowired
+  private MonitoringTimedAspect timedAspect;
 
   private static final MonitoringTimed timed =
       Javanna.createAnnotation(MonitoringTimed.class, timedAnnotationData);
@@ -52,7 +54,8 @@ public class ControllerProfiler {
   private static final Logger logger = LoggerFactory.getLogger(ControllerProfiler.class);
 
   @Pointcut("execution(* com.gitbub.sonus21.monitoring.controller..*.*(..))")
-  public void controller() {}
+  public void controller() {
+  }
 
   @Around("controller()")
   public Object profile(ProceedingJoinPoint pjp) throws Throwable {

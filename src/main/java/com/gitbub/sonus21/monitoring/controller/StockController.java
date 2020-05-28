@@ -32,7 +32,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "stocks")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class StockController {
-  @NonNull private StockManager stockManager;
+
+  @NonNull
+  private StockManager stockManager;
 
   @GetMapping
   @ResponseBody
